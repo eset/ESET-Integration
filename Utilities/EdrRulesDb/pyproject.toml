@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "edr-rules-db"
+version = "0.1.0"
+description = ""
+authors = ["Jiri Tribula <jiri.tribula@eset.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+aiohttp = "3.10.5"
+pyhocon = "0.3.61"
+xmltodict = "0.13.0"
+
+[tool.poetry.scripts]
+edr-rules-db = "edr_rules_db.__main__:main"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "8.3.2"
+pytest-asyncio = "0.24.0"
+aioresponses = "0.7.6"
+pytest-mypy = "0.10.3"
+
+[tool.pytest.ini_options]
+addopts = "--verbose --mypy"
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "session"
+
+[tool.mypy]
+strict = true
+ignore_missing_imports = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
