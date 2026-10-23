@@ -14,5 +14,5 @@ class RuleMetrics:
         self.parsing_fail += 1
 
     def log_metrics(self) -> None:
-        logging.info(f"All rules {self.all} rules")
+        logging.info(f"All {self.all} rules")
         logging.info(f"Failed to parse {self.parsing_fail} rules")
