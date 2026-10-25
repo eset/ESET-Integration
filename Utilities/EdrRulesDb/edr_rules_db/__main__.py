@@ -95,7 +95,7 @@ class EdrRulesDB:
             try:
                 rule_dict = self._get_dict_rule_from_xml(rule["xmlDefinition"])
             except EdrRuleParsingFailed as e:
-                logging.error(f"Unable parse rule: {rule}")
+                logging.error(f"Unable to parse rule: {rule}")
                 logging.debug("Exception", exc_info=e)
                 self._metrics.inc_parsing_fail()
                 continue
